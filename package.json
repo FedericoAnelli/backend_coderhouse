@@ -1,11 +1,14 @@
 {
   "name": "http-demo",
   "version": "1.0.0",
+  "homepage": "https://federicoanelli.github.io/backend_coderhouse/",
   "description": "A simple HTTP server",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "dev": "NODE_ENV=local ./node_modules/nodemon/bin/nodemon.js --exec 'node -r dotenv/config' ./index.js"
+    "dev": "NODE_ENV=local ./node_modules/nodemon/bin/nodemon.js --exec 'node -r dotenv/config' ./index.js",
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d build"
   },
   "keywords": [],
   "author": "Federico Anelli",
