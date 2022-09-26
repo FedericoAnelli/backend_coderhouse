@@ -27,14 +27,14 @@ const productos = [
 let id = 4;
 
 router.get('/productos', (_, res) => {
-    res.status(200).json(productos);
+    res.render("productos", {productos});
 });
 
 router.get('/productos/:id', (req, res) => {
     const { id } = req.params;
     const producto = productos.find(producto => producto.id === parseInt(id));
     if (producto) {
-        res.status(200).json(producto);
+        res.render("productos", { producto } );
     } else {
         res.status(404).json({ error: 'Producto no encontrado' });
     }
