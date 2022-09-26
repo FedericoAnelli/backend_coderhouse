@@ -1,22 +1,24 @@
-<h1 class="m-5">Productos</h1>
+<div class="container d-flex flex-column justify-content-center align-items-center">
+    <h1 class="mt-5">Productos</h1>
 
-<div class="m-5">
-    <table class="table table-dark table-hover table-striped align-middle  text-center">
-        <thead>
-            <tr>
-                <th scope="col">Nombre</th>
-                <th scope="col">Precio</th>
-                <th scope="col">Imagen</th>
-            </tr>
-        </thead>
-        <tbody>
-            {{#each productos}}
+    <div class="m-5">
+        <table class="table table-dark table-hover table-striped align-middle  text-center">
+            <thead>
                 <tr>
-                    <td>{{ title }}</td>
-                    <td>${{ price }}</td>
-                    <td><img class="h-25 w-25" src="{{ thumbnail }}" alt={{ title }}></td>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Imagen</th>
                 </tr>
-            {{/each}}
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                {{#each productos}}
+                    <tr>
+                        <td>{{ title }}</td>
+                        <td>${{ price }}</td>
+                        <td><img class="h-25 w-25" src="{{ thumbnail }}" alt={{ title }}></td>
+                    </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
 </div>
