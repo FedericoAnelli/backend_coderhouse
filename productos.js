@@ -44,7 +44,7 @@ router.post('/productos', (req, res) => {
     const producto = req.body;
     producto.id = id++;
     productos.push(producto);
-    res.status(201).json(producto);
+    res.redirect('/productos');
 });
 
 router.put('/productos/:id', (req, res) => {

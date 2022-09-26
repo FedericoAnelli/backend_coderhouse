@@ -1,0 +1,16 @@
+extends layout 
+
+block content 
+    h1 Productos con Pug
+    table 
+        tr 
+            th Nombre
+            th Precio
+            th Imagen 
+        each producto in productos
+            tr 
+                td= producto.title
+                td= producto.price
+                td 
+                    img(src=producto.thumbnail)
+

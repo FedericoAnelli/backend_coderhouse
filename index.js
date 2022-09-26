@@ -17,13 +17,15 @@ app.use((req, res, next) => {
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use('/', express.static(path.join(__dirname, 'public')));
+app.use('/pug', express.static(path.join(__dirname, './express-pug/public')));
+app.use('/ejs', express.static(path.join(__dirname, './express-ejs/public')));
 app.engine('handlebars', engine());
 app.set('view engine', 'handlebars');
 app.set('views', path.join(__dirname, 'views'));
 
 // Middleware de terceros
 app.use(useragent.express());
-app.use('/api', productos);
+app.use('/', productos);
 
 app.use(function (err, req, res, next) {
         console.error(err.stack);
