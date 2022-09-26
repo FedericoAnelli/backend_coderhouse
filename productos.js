@@ -30,6 +30,16 @@ router.get('/productos', (_, res) => {
     res.render("productos", {productos});
 });
 
+router.get('/pug/productos', (_, res) => {
+    console.log(__dirname);
+    res.render("productos", {productos});
+});
+
+router.get('/ejs/productos', (_, res) => {
+    console.log(__dirname);
+    res.render("productos", {productos});
+});
+
 router.get('/productos/:id', (req, res) => {
     const { id } = req.params;
     const producto = productos.find(producto => producto.id === parseInt(id));
